@@ -1,0 +1,83 @@
+.catalog-preview {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-near-black);
+}
+
+.catalog-preview-title {
+  margin-bottom: var(--spacing-2xl);
+  color: var(--color-white);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.outfit-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-charcoal);
+  aspect-ratio: 4/5;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.outfit-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.outfit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.outfit-card:hover .outfit-image img {
+  transform: scale(1.05);
+}
+
+.outfit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.outfit-card:hover .outfit-overlay {
+  opacity: 1;
+}
+
+.outfit-view-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.875rem;
+}
+
+.outfit-view-btn:hover {
+  background-color: var(--color-off-white);
+}
+
+@media (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+  }
+}

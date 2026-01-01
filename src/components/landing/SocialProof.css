@@ -1,0 +1,22 @@
+.social-proof {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-black);
+}
+
+.social-proof-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.social-proof-text {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--color-muted-gray);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-regular);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.social-proof-text:last-child {
+  margin-bottom: 0;
+}

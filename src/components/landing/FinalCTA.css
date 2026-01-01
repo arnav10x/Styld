@@ -1,0 +1,26 @@
+.final-cta {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-black);
+}
+
+.final-cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.final-cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-white);
+}
+
+.final-cta-subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--color-muted-gray);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+.final-cta-button {
+  display: inline-block;
+}

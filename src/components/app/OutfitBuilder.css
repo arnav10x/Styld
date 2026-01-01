@@ -1,0 +1,233 @@
+.outfit-builder {
+  min-height: calc(100vh - 80px);
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-black);
+}
+
+.builder-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.builder-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  letter-spacing: -0.03em;
+}
+
+.builder-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.builder-save {
+  min-width: 100px;
+}
+
+.builder-preview {
+  margin-bottom: var(--spacing-3xl);
+  display: flex;
+  justify-content: center;
+}
+
+.preview-outfit {
+  max-width: 600px;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: var(--color-near-black);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-top,
+.preview-bottom,
+.preview-shoes {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-charcoal);
+}
+
+.preview-top img,
+.preview-bottom img,
+.preview-shoes img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.preview-top {
+  flex: 2;
+}
+
+.preview-bottom {
+  flex: 2;
+}
+
+.preview-shoes {
+  flex: 1;
+}
+
+.builder-carousels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.carousel-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carousel-title {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.carousel-nav {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  color: var(--color-white);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.carousel-nav:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-light-gray) transparent;
+  padding: var(--spacing-sm) 0;
+  margin: 0 calc(-1 * var(--spacing-lg));
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--color-light-gray);
+  border-radius: 3px;
+}
+
+.carousel {
+  display: flex;
+  gap: var(--spacing-md);
+  width: max-content;
+}
+
+.carousel-item {
+  flex: 0 0 200px;
+  height: 250px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-charcoal);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-item.selected {
+  border-color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+}
+
+.carousel-item.selected::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .builder-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .builder-actions {
+    width: 100%;
+  }
+  
+  .builder-actions button {
+    flex: 1;
+  }
+  
+  .carousel-item {
+    flex: 0 0 150px;
+    height: 200px;
+  }
+  
+  .preview-outfit {
+    padding: var(--spacing-md);
+  }
+}
